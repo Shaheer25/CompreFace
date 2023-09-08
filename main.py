@@ -5,7 +5,7 @@ from compreface.collections.face_collections import Subjects
 
 DOMAIN: str = 'http://localhost'
 PORT: str = '8000'
-API_KEY: str = ''
+API_KEY: str = 'your_face_recognition_key'
 
 compre_face: CompreFace = CompreFace(DOMAIN, PORT)
 
@@ -14,3 +14,8 @@ recognition: RecognitionService = compre_face.init_face_recognition(API_KEY)
 face_collection: FaceCollection = recognition.get_face_collection()
 
 subjects: Subjects = recognition.get_subjects()
+
+image_path: str = './static/img1.jpg'
+subject: str = 'Shahir'
+
+face_collection.add(image_path=image_path, subject=subject)
